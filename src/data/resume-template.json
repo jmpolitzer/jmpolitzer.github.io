@@ -1,0 +1,104 @@
+{
+  "name": "",
+  "phone": "",
+  "email": "",
+  "github": "",
+  "address1": "",
+  "address2": "",
+  "city": "",
+  "state": "",
+  "zip": "",
+  "skills": ["", "", "", "", "", "", "", "", "", "", "", "", ""],
+  "other": ["",
+            "",
+            "",
+            "",
+            ""],
+  "references": [],
+  "profile": "",
+  "experience": [
+    {
+      "title": "",
+      "company": "",
+      "location": "",
+      "duration": "",
+      "highlights": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "title": "",
+      "company": "",
+      "location": "",
+      "duration": "",
+      "highlights": []
+    },
+    {
+      "title": "",
+      "company": "",
+      "location": "",
+      "duration": "",
+      "highlights": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "title": "",
+      "company": "",
+      "location": "",
+      "duration": "",
+      "highlights": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "",
+      "degree": "",
+      "year": ""
+    },
+    {
+      "school": "",
+      "degree": "",
+      "year": ""
+    },
+    {
+      "school": "",
+      "degree": "",
+      "year": ""
+    },
+    {
+      "school": "",
+      "degree": "",
+      "year": ""
+    }
+  ]
+}
