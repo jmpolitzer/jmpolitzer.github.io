@@ -43,11 +43,10 @@ const StyledEditor = styled(LiveEditor)`
 
 const StyledPreview = styled(LivePreview)`
   position: relative;
-  padding: 0.5rem;
   background: white;
   color: black;
-  height: auto;
-  overflow: hidden;
+  height: ${polished.rem(350)};
+  overflow: scroll;
   ${column}
 `;
 
