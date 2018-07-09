@@ -1,19 +1,23 @@
 import React from 'react';
-// import styled, { css } from 'styled-components';
-// import * as polished from 'polished';
-import ResumeContent from '../data/resume.json';
-// import { foreground, red, lightGrey } from '../utils/colors';
 
 const ResumeLayout = (`
-  const Layout = () => (
-    <div>
-      <h1>
-        <strong>My Resume</strong>
-      </h1>
-    </div>
-  )
+  const LayoutWrapper = styled.div\`
+    flex: 1;
+    flex-direction: row;
+  \`;
 
-  render(<Layout />)
+  const Header = styled.h1\`
+    font-weight: bold;
+    color: blue;
+  \`;
+
+  const data = JSON.parse(content);
+
+  render(
+    <LayoutWrapper>
+      <Header>{data.name}</Header>
+    </LayoutWrapper>
+  );
 `);
 
 export default ResumeLayout;

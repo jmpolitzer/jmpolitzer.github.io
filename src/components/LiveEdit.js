@@ -58,9 +58,10 @@ const StyledError = styled(LiveError)`
   color: ${foreground};
 `;
 
-const LiveEdit = ({ noInline, code }) => (
+const LiveEdit = ({ noInline, code, scope }) => (
   <StyledProvider
     code={code}
+    scope={scope}
     noInline={noInline}
     mountStylesheet={true}
   >
