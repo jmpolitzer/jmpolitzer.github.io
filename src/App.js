@@ -7,7 +7,7 @@ import LiveEdit from './components/LiveEdit';
 import ResumeLayout from './components/ResumeLayout';
 import ResumeContent from './data/resume.json';
 
-import logo from './logo.svg';
+import headshot from './headshot.jpg';
 import './App.css';
 
 class App extends Component {
@@ -55,8 +55,8 @@ class App extends Component {
     return (
       <div>
         <header className="App">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src={headshot} className="App-headshot" alt="headshot" />
+          <h1 className="App-title">Hi, I'm Jay. I'm glad you stopped by.</h1>
         </header>
         <ButtonContainer>
           <ReactToPrint trigger={() => this.print()}
