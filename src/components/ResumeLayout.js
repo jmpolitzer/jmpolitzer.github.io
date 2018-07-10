@@ -2,18 +2,18 @@ const ResumeLayout = (`
   const LayoutWrapper = styled.div\`
     display: block;
     padding: 25px;
-    color: rgb(141, 141, 141);
+    color: \${colors.text};
   \`;
 
   const HorizontalRule = styled.hr\`
     border: 0;
-    border-top 4px solid rgb(85, 140, 171);
+    border-top 4px solid \${colors.cerulean};
   \`;
 
   const Header = styled.h4\`
     margin-left: 10px;
     font-weight: bold;
-    color: rgb(85, 140, 171);
+    color: \${colors.cerulean};
   \`;
 
   const Body = styled.div\`
@@ -56,7 +56,7 @@ const ResumeLayout = (`
     font-size: 10px;
     margin-bottom: \${props => props.other ? '7px' : '2px'};
     margin-right: \${props => props.skill && '2px'};
-    color: \${props => props.title && 'rgb(113, 159, 185)'};
+    color: \${props => props.title && colors.lightCerulean};
   \`;
 
   const LongText = styled.div\`
@@ -134,7 +134,5 @@ const ResumeLayout = (`
     </LayoutWrapper>
   );
 `);
-
-/* TODO: Move colors to Utils directory. */
 
 export default ResumeLayout;

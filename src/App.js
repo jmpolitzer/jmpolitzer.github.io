@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import * as polished from 'polished';
-// import { foreground, red, lightGrey } from '../utils/colors';
+import { cerulean, lightCerulean, text } from './utils/colors';
 import LiveEdit from './components/LiveEdit';
 import ResumeLayout from './components/ResumeLayout';
 import ResumeContent from './data/resume.json';
@@ -12,7 +12,8 @@ import './App.css';
 class App extends Component {
   render() {
     const content = JSON.stringify(ResumeContent);
-    const scope = { styled, content };
+    const colors = { cerulean, lightCerulean, text };
+    const scope = { styled, colors, content };
 
     return (
       <div>
