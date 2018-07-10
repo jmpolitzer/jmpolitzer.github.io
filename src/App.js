@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
+import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import { cerulean, lightCerulean, text, lightText } from './utils/colors';
 import LiveEdit from './components/LiveEdit';
 import ResumeLayout from './components/ResumeLayout';
@@ -28,8 +29,17 @@ class App extends Component {
   }
 
   print() {
-    return <button onMouseEnter={() => this.setPrintMode(true)}
-                   onMouseLeave={() => this.setPrintMode(false)}>Print</button>;
+    const Button = styled.button`
+      background: rgb(176,176,176);
+      color: white;
+      padding: 10px;
+      font-size: 22px;
+    `;
+
+    return <Button onMouseEnter={() => this.setPrintMode(true)}
+             onMouseLeave={() => this.setPrintMode(false)}>
+             <IosPrinterOutline />
+           </Button>
   }
 
   render() {
@@ -37,6 +47,10 @@ class App extends Component {
     const colors = { cerulean, lightCerulean, text, lightText };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
+    const ButtonContainer = styled.div`
+      display: flex;
+      justify-content: flex-end;
+    `;
 
     return (
       <div>
@@ -44,13 +58,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <ButtonContainer>
+          <ReactToPrint trigger={() => this.print()}
+            content={() => this.state.previewRef}
+            pageStyle={''} />
+        </ButtonContainer>
         <LiveEdit code={ResumeLayout}
                   scope={scope}
                   noInline={true}
                   passPreviewRefUpward={this.getPreviewRef} />
-        <ReactToPrint trigger={() => this.print()}
-                      content={() => this.state.previewRef}
-                      pageStyle={''} />
       </div>
     );
   }
