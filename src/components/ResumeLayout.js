@@ -54,7 +54,9 @@ const ResumeLayout = (`
   const BoldText = styled.div\`
     font-weight: 600;
     font-size: 10px;
-    margin-bottom: 2px;
+    margin-bottom: \${props => props.other ? '7px' : '2px'};
+    margin-right: \${props => props.skill && '2px'};
+    color: \${props => props.title && 'rgb(113, 159, 185)'};
   \`;
 
   const LongText = styled.div\`
@@ -62,10 +64,6 @@ const ResumeLayout = (`
     font-size: 10px;
     line-height: 13px;
   \`;
-
-  const TitleColor = {
-    color: 'rgb(113, 159, 185)'
-  };
 
   const data = JSON.parse(content);
 
@@ -76,59 +74,59 @@ const ResumeLayout = (`
       <Body>
         <SideBar>
           <SideBarGroup>
-            <BoldText style={TitleColor}>{data.phone}</BoldText>
-            <BoldText style={TitleColor}>{data.email}</BoldText>
-            <BoldText style={TitleColor}>{data.github}</BoldText>
+            <BoldText title='true'>{data.phone}</BoldText>
+            <BoldText title='true'>{data.email}</BoldText>
+            <BoldText title='true'>{data.github}</BoldText>
           </SideBarGroup>
           <SideBarGroup>
             <BoldText>{data.address1}</BoldText>
             <BoldText>{data.city}, {data.state} {data.zip}</BoldText>
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText style={TitleColor}>Skills</BoldText>
+            <BoldText title='true'>Skills</BoldText>
             <SkillsGroup>
               {data.skills.map((skill, i) => {
                 const last = i <= data.skills.length - 2 ? ',' : '';
 
-                return <BoldText style={{ marginRight: '2px' }}>{skill}{last}</BoldText>
+                return <BoldText skill='true' key={i}>{skill}{last}</BoldText>
               })}
             </SkillsGroup>
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText style={TitleColor}>Other</BoldText>
-            {data.other.map((oth, i) => {
-              return <BoldText style={{ marginBottom: '7px' }}>{oth}</BoldText>
+            <BoldText title='true'>Other</BoldText>
+            {data.other.map((oth, j) => {
+              return <BoldText other='true' key={j}>{oth}</BoldText>
             })}
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText style={TitleColor}>References</BoldText>
+            <BoldText title='true'>References</BoldText>
             {data.references.length === 0 && <BoldText>Available upon request.</BoldText>}
           </SideBarGroup>
         </SideBar>
         <Main>
           <MainSection>
-            <BoldText style={TitleColor}>Profile</BoldText>
+            <BoldText title='true'>Profile</BoldText>
             <LongText>{data.profile}</LongText>
           </MainSection>
           <MainSection>
-            <BoldText style={TitleColor}>Experience</BoldText>
-            {data.experience.map((exp, i) => {
-              return <div>
+            <BoldText title='true'>Experience</BoldText>
+            {data.experience.map((exp, k) => {
+              return <div key={k}>
                       <BoldText>{exp.title}, {exp.company}; {exp.location} &ndash; {exp.duration}</BoldText>
                       <ExperienceList>
-                        {exp.highlights.map((hl, j) => {
-                          return <li><LongText>{hl}</LongText></li>;
+                        {exp.highlights.map((hl, l) => {
+                          return <li key={l}><LongText>{hl}</LongText></li>;
                         })}
                       </ExperienceList>
                     </div>;
                   })}
           </MainSection>
           <MainSection>
-            <BoldText style={TitleColor}>Education</BoldText>
-            {data.education.map((edu, i) => {
+            <BoldText title='true'>Education</BoldText>
+            {data.education.map((edu, m) => {
               const degree = edu.degree ? edu.degree + ',' : '';
 
-              return <BoldText>{edu.school} &ndash; {degree} {edu.year}</BoldText>;
+              return <BoldText key={m}>{edu.school} &ndash; {degree} {edu.year}</BoldText>;
             })}
           </MainSection>
         </Main>
