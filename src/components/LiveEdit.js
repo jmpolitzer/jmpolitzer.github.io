@@ -36,7 +36,7 @@ const StyledEditor = styled(LiveEditor)`
   background: ${lightGrey};
   font-family: 'Source Code Pro', monospace;
   font-size: ${polished.rem(14)};
-  height: ${polished.rem(350)};
+  height: ${polished.rem(500)};
   overflow: scroll;
   ${column}
 `;
@@ -45,7 +45,7 @@ const StyledPreview = styled(LivePreview)`
   position: relative;
   background: white;
   color: black;
-  height: ${polished.rem(350)};
+  height: ${polished.rem(500)};
   overflow: ${props => props.printmode ? 'visible' : 'scroll'};
   ${column}
 `;

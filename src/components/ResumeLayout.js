@@ -140,6 +140,7 @@ const ResumeLayout = (`
       </Body>
     </LayoutWrapper>
   );
+
 `);
 
 export default ResumeLayout;

@@ -37,7 +37,7 @@ class App extends Component {
     `;
 
     return <Button onMouseEnter={() => this.setPrintMode(true)}
-             onMouseLeave={() => this.setPrintMode(false)}>
+                   onMouseLeave={() => this.setPrintMode(false)}>
              <IosPrinterOutline />
            </Button>
   }
