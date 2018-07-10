@@ -9,15 +9,22 @@
   border-radius: 50%;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* From react-typist -- https://github.com/jstejada/react-typist */
+.Typist .Cursor {
+  display: inline-block; }
+  .Typist .Cursor--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

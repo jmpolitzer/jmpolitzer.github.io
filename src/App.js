@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import { cerulean, lightCerulean, text, lightText } from './utils/colors';
+import IntroText from './components/IntroText';
 import LiveEdit from './components/LiveEdit';
 import ResumeLayout from './components/ResumeLayout';
 import ResumeContent from './data/resume.json';
@@ -56,7 +57,7 @@ class App extends Component {
       <div>
         <header className="App">
           <img src={headshot} className="App-headshot" alt="headshot" />
-          <h1 className="App-title">Hi, I'm Jay. I'm glad you stopped by.</h1>
+          <IntroText />
         </header>
         <ButtonContainer>
           <ReactToPrint trigger={() => this.print()}
