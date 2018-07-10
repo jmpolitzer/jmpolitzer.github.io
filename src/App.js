@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
-import { cerulean, lightCerulean, text } from './utils/colors';
+import { cerulean, lightCerulean, text, lightText } from './utils/colors';
 import LiveEdit from './components/LiveEdit';
 import ResumeLayout from './components/ResumeLayout';
 import ResumeContent from './data/resume.json';
@@ -34,7 +34,7 @@ class App extends Component {
 
   render() {
     const content = JSON.stringify(ResumeContent);
-    const colors = { cerulean, lightCerulean, text };
+    const colors = { cerulean, lightCerulean, text, lightText };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
 
