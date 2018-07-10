@@ -46,7 +46,7 @@ const StyledPreview = styled(LivePreview)`
   background: white;
   color: black;
   height: ${polished.rem(350)};
-  overflow: scroll;
+  overflow: ${props => props.printmode ? 'visible' : 'scroll'};
   ${column}
 `;
 
@@ -57,20 +57,34 @@ const StyledError = styled(LiveError)`
   color: ${foreground};
 `;
 
-const LiveEdit = ({ noInline, code, scope }) => (
-  <StyledProvider
-    code={code}
-    scope={scope}
-    noInline={noInline}
-    mountStylesheet={true}
-  >
-    <LiveWrapper>
-      <StyledEditor />
-      <StyledPreview />
-    </LiveWrapper>
+class LiveEdit extends React.Component {
+  constructor() {
+    super();
 
-    <StyledError />
-  </StyledProvider>
-);
+    this.previewRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.props.passPreviewRefUpward(this.previewRef.current);
+  }
+
+  render() {
+    const { code, scope, noInline } = this.props;
+
+    return (
+      <StyledProvider
+        code={code}
+        scope={scope}
+        noInline={noInline}
+        mountStylesheet={true}>
+        <LiveWrapper>
+          <StyledEditor />
+          <StyledPreview printmode={scope.printMode ? 1 : 0} ref={this.previewRef} />
+        </LiveWrapper>
+        <StyledError />
+      </StyledProvider>
+    );
+  }
+};
 
 export default LiveEdit;
