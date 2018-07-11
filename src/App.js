@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
-import { cerulean, lightCerulean, text, lightText } from './utils/colors';
+import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
+import { cerulean, lightCerulean, text,
+         lightText, redHeader, print } from './utils/colors';
 import IntroText from './components/IntroText';
 import LiveEdit from './components/LiveEdit';
-import ResumeLayout from './components/ResumeLayout';
+import BlueResumeLayout from './components/BlueResumeLayout';
+import RedResumeLayout from './components/RedResumeLayout';
 import ResumeContent from './data/resume.json';
 
 import headshot from './headshot.jpg';
@@ -15,29 +18,69 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { previewRef: null, printMode: false };
+    this.state = { previewRef: null, printMode: false, layout: 'blue' };
+    this.getButtons = this.getButtons.bind(this);
     this.getPreviewRef = this.getPreviewRef.bind(this);
+    this.getResumeLayout = this.getResumeLayout.bind(this);
+    this.setResumeLayout = this.setResumeLayout.bind(this);
     this.setPrintMode = this.setPrintMode.bind(this);
     this.print = this.print.bind(this);
+  }
+
+  getButtons() {
+    const buttonTypes = {
+      blue: { color: cerulean },
+      red: { color: redHeader }
+    };
+
+    const ButtonContainer = styled.div`
+      display: flex;
+      justify-content: flex-end;
+    `;
+
+    const Button = styled.button`
+      background: ${(props) => props.type.color};
+      color: white;
+      padding: 10px;
+      font-size: 22px;
+    `;
+
+    return <ButtonContainer>
+      {Object.keys(buttonTypes).map((b) => {
+        return <Button type={buttonTypes[b]}
+                       onClick={() => this.setResumeLayout(b)}>
+                 <IoIosPaperOutline />
+               </Button>})}
+      <ReactToPrint trigger={() => this.print(Button)}
+                    content={() => this.state.previewRef}
+                    pageStyle={''} />
+    </ButtonContainer>
   }
 
   getPreviewRef(previewRef) {
     this.setState({ previewRef });
   }
 
+  getResumeLayout() {
+    const layouts = {
+      blue: BlueResumeLayout,
+      red: RedResumeLayout
+    };
+
+    return layouts[this.state.layout];
+  }
+
+  setResumeLayout(layout) {
+    this.setState({ layout });
+  };
+
   setPrintMode(mode) {
     this.setState({ printMode: mode });
   }
 
-  print() {
-    const Button = styled.button`
-      background: rgb(176,176,176);
-      color: white;
-      padding: 10px;
-      font-size: 22px;
-    `;
-
-    return <Button onMouseEnter={() => this.setPrintMode(true)}
+  print(Button) {
+    return <Button type={{ color: print }}
+                   onMouseEnter={() => this.setPrintMode(true)}
                    onMouseLeave={() => this.setPrintMode(false)}>
              <IosPrinterOutline />
            </Button>
@@ -45,13 +88,11 @@ class App extends Component {
 
   render() {
     const content = JSON.stringify(ResumeContent);
-    const colors = { cerulean, lightCerulean, text, lightText };
+    const colors = { cerulean, lightCerulean, text,
+                     lightText, redHeader };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
-    const ButtonContainer = styled.div`
-      display: flex;
-      justify-content: flex-end;
-    `;
+
 
     return (
       <div>
@@ -59,12 +100,8 @@ class App extends Component {
           <img src={headshot} className="App-headshot" alt="headshot" />
           <IntroText />
         </header>
-        <ButtonContainer>
-          <ReactToPrint trigger={() => this.print()}
-            content={() => this.state.previewRef}
-            pageStyle={''} />
-        </ButtonContainer>
-        <LiveEdit code={ResumeLayout}
+        {this.getButtons()}
+        <LiveEdit code={this.getResumeLayout()}
                   scope={scope}
                   noInline={true}
                   passPreviewRefUpward={this.getPreviewRef} />

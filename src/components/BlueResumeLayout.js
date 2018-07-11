@@ -1,4 +1,4 @@
-const ResumeLayout = (`
+const BlueResumeLayout = (`
   const LayoutWrapper = styled.div\`
     display: block;
     padding: 25px;
@@ -143,4 +143,4 @@ const ResumeLayout = (`
 
 `);
 
-export default ResumeLayout;
+export default BlueResumeLayout;
