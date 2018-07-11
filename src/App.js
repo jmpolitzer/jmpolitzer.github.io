@@ -44,6 +44,10 @@ class App extends Component {
       color: white;
       padding: 10px;
       font-size: 22px;
+
+      &:hover {
+        cursor: pointer;
+      }
     `;
 
     /* Add hover effect. */
