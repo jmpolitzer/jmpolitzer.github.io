@@ -4,7 +4,8 @@ import ReactToPrint from 'react-to-print';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
 import { cerulean, lightCerulean, text,
-         lightText, redHeader, print } from './utils/colors';
+         lightText, darkText, redHeader,
+         print } from './utils/colors';
 import IntroText from './components/IntroText';
 import LiveEdit from './components/LiveEdit';
 import BlueResumeLayout from './components/BlueResumeLayout';
@@ -18,7 +19,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { previewRef: null, printMode: false, layout: 'blue' };
+    this.state = { previewRef: null, printMode: false, layout: 'red' };
     this.getButtons = this.getButtons.bind(this);
     this.getPreviewRef = this.getPreviewRef.bind(this);
     this.getResumeLayout = this.getResumeLayout.bind(this);
@@ -89,7 +90,7 @@ class App extends Component {
   render() {
     const content = JSON.stringify(ResumeContent);
     const colors = { cerulean, lightCerulean, text,
-                     lightText, redHeader };
+                     darkText, lightText, redHeader };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
 

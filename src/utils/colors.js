@@ -12,4 +12,5 @@ export const lightCerulean = 'rgb(144, 198, 229)';
 export const redHeader = 'rgb(211, 34, 114)';
 export const text = 'rgb(141, 141, 141)';
 export const lightText = 'rgb(196, 194, 194)';
-export const print = 'rgb(176,176,176)';
+export const darkText = 'rgb(79, 79, 79)';
+export const print = 'rgb(176, 176, 176)';

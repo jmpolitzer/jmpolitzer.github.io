@@ -2,14 +2,35 @@ const RedResumeLayout = (`
   const LayoutWrapper = styled.div\`
     display: block;
     padding: 25px;
-    color: \${(props) => props.printMode ? colors.lightText : colors.text};
+    // color: \${(props) => props.printMode ? colors.lightText : colors.text};
   \`;
 
-  const Header = styled.h1\`
-    margin-left: 10px;
+  const Header = styled.div\`
+    display: flex;
+    padding: 0px 10px;
+    margin-bottom: 150px;
+  \`;
+
+  const HeaderSection = styled.div\`
+    flex-direction: column;
+    width: 50%;
+  \`;
+
+  const Name = styled.div\`
+    width: 25%;
+    font-size: 64px;
     font-weight: bold;
     color: \${colors.redHeader};
   \`;
+
+  const Contact = styled.div\`
+    color: \${colors.darkText};
+    margin-bottom: 20px;
+  \`;
+
+  const Text = styled.div\`
+    font-size: 13px;
+  \`
 
   const Body = styled.div\`
     display: flex;
@@ -31,7 +52,24 @@ const RedResumeLayout = (`
 
   render(
     <LayoutWrapper printMode={printMode ? 1 : 0}>
-      <Header printMode={printMode ? 1 : 0}>{data.name.toUpperCase()}</Header>
+      <Header>
+        <HeaderSection>
+          <Name printMode={printMode ? 1 : 0}>{data.name}</Name>
+        </HeaderSection>
+        <HeaderSection>
+          <Contact>
+            <Text>{data.address1}</Text>
+            <Text>{data.city}, {data.state} {data.zip}</Text>
+          </Contact>
+          <Contact>
+            <Text>M&emsp;&emsp;&emsp;{data.phone}</Text>
+            <Text>E&emsp;&emsp;&emsp;{data.email}</Text>
+          </Contact>
+          <Contact>
+            <Text>{data.github}</Text>
+          </Contact>
+        </HeaderSection>
+      </Header>
       <Body>
         <SideBar>
           <div>Red Layout SideBar</div>
