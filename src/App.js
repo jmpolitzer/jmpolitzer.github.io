@@ -19,7 +19,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { previewRef: null, printMode: false, layout: 'red' };
+    this.state = { previewRef: null, printMode: false, layout: 'blue' };
     this.getButtons = this.getButtons.bind(this);
     this.getPreviewRef = this.getPreviewRef.bind(this);
     this.getResumeLayout = this.getResumeLayout.bind(this);
@@ -46,9 +46,11 @@ class App extends Component {
       font-size: 22px;
     `;
 
+    /* Add hover effect. */
     return <ButtonContainer>
-      {Object.keys(buttonTypes).map((b) => {
-        return <Button type={buttonTypes[b]}
+      {Object.keys(buttonTypes).map((b, i) => {
+        return <Button key={i}
+                       type={buttonTypes[b]}
                        onClick={() => this.setResumeLayout(b)}>
                  <IoIosPaperOutline />
                </Button>})}
