@@ -10,6 +10,7 @@ export const lightGrey = polished.darken(0.05, '#282a36');
 export const cerulean = 'rgb(113, 159, 185)';
 export const lightCerulean = 'rgb(144, 198, 229)';
 export const redHeader = 'rgb(211, 34, 114)';
+export const lightOrange = 'rgb(246, 200, 68)';
 export const text = 'rgb(141, 141, 141)';
 export const lightText = 'rgb(196, 194, 194)';
 export const darkText = 'rgb(79, 79, 79)';

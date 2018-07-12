@@ -5,11 +5,12 @@ import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
 import { cerulean, lightCerulean, text,
          lightText, darkText, redHeader,
-         print } from './utils/colors';
+         print, lightOrange } from './utils/colors';
 import IntroText from './components/IntroText';
 import LiveEdit from './components/LiveEdit';
 import BlueResumeLayout from './components/BlueResumeLayout';
 import RedResumeLayout from './components/RedResumeLayout';
+import OrangeResumeLayout from './components/OrangeResumeLayout';
 import ResumeContent from './data/resume.json';
 
 import headshot from './headshot.jpg';
@@ -31,7 +32,8 @@ class App extends Component {
   getButtons() {
     const buttonTypes = {
       blue: { color: cerulean },
-      red: { color: redHeader }
+      red: { color: redHeader },
+      orange: { color: lightOrange }
     };
 
     const ButtonContainer = styled.div`
@@ -41,6 +43,7 @@ class App extends Component {
 
     const Button = styled.button`
       background: ${(props) => props.type.color};
+      border: 0;
       color: white;
       padding: 10px;
       font-size: 22px;
@@ -50,7 +53,6 @@ class App extends Component {
       }
     `;
 
-    /* Add hover effect. */
     return <ButtonContainer>
       {Object.keys(buttonTypes).map((b, i) => {
         return <Button key={i}
@@ -71,7 +73,8 @@ class App extends Component {
   getResumeLayout() {
     const layouts = {
       blue: BlueResumeLayout,
-      red: RedResumeLayout
+      red: RedResumeLayout,
+      orange: OrangeResumeLayout
     };
 
     return layouts[this.state.layout];
@@ -96,7 +99,8 @@ class App extends Component {
   render() {
     const content = JSON.stringify(ResumeContent);
     const colors = { cerulean, lightCerulean, text,
-                     darkText, lightText, redHeader };
+                     darkText, lightText, redHeader,
+                     lightOrange };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
 

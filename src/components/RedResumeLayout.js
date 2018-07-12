@@ -67,10 +67,10 @@ const RedResumeLayout = (`
   const data = JSON.parse(content);
 
   render(
-    <LayoutWrapper printMode={printMode ? 1 : 0}>
+    <LayoutWrapper>
       <Header>
         <HeaderSection name='true'>
-          <Name printMode={printMode ? 1 : 0}>{data.name}</Name>
+          <Name>{data.name}</Name>
         </HeaderSection>
         <HeaderSection>
           <Contact>
