@@ -1,24 +1,24 @@
 const OrangeResumeLayout = (`
   const LayoutWrapper = styled.div\`
     display: flex;
-    padding: 100px 0px;
+    padding: 100px 35px;
   \`;
 
   const SideBar = styled.div\`
     display: flex;
     justify-content: flex-end;
     padding-right: 30px;
-    width: 25%;
+    width: 15%;
   \`;
 
   const LogoBox = styled.div\`
     height: 25px;
     width: 25px;
-    background-color: \${(props) => props.color};
+    box-shadow: inset 0 0 0 1000px \${(props) => props.color};
   \`;
 
   const Main = styled.div\`
-    width: 75%;
+    width: 85%;
   \`;
 
   const HeaderSection = styled.div\`
@@ -27,9 +27,9 @@ const OrangeResumeLayout = (`
   \`;
 
   const Contact = styled.div\`
-    width: \${(props) => props.big ? '100%' : '25%'};
+    margin-right: \${(props) => !props.big && '20px'};
     color: \${(props) => props.color ? props.color : 'black'};
-    font-size: \${(props) => props.big ? '24px' : '13px'};
+    font-size: \${(props) => props.big ? '24px' : '11px'};
     letter-spacing: \${(props) => props.big && '0.5px'};
   \`;
 
@@ -38,8 +38,19 @@ const OrangeResumeLayout = (`
   \`;
 
   const BodySection = styled.div\`
-    display: flex;
+    margin-bottom: 20px;
   \`;
+
+  const Title = styled.div\`
+    color: \${colors.darkerText};
+    font-size: 20px;
+  \`;
+
+  const LongText = styled.div\`
+    color: black;
+    font-size: 13px;
+    line-height: 20px;
+  \`
 
   const data = JSON.parse(content);
 
@@ -55,29 +66,30 @@ const OrangeResumeLayout = (`
           <Contact color={colors.darkerText} big='true'>{data.name}</Contact>
         </HeaderSection>
         <HeaderSection>
-          <Contact>Address</Contact>
-          <Contact>Phone</Contact>
-          <Contact>Email</Contact>
-          <Contact>Github</Contact>
+          <Contact>{data.phone}</Contact>
+          <Contact>{data.email}</Contact>
+          <Contact>{data.address1} {data.state}, {data.zip}</Contact>
+          <Contact>{data.github}</Contact>
         </HeaderSection>
         <Body>
           <BodySection>
-            Profile
+            <Title>Profile</Title>
+            <LongText>{data.profile}</LongText>
           </BodySection>
           <BodySection>
-            Experience
+            <Title>Experience</Title>
           </BodySection>
           <BodySection>
-            Education
+            <Title>Education</Title>
           </BodySection>
           <BodySection>
-            Skills
+            <Title>Skills</Title>
           </BodySection>
           <BodySection>
-            Other
+            <Title>Other</Title>
           </BodySection>
           <BodySection>
-            References
+            <Title>References</Title>
           </BodySection>
         </Body>
       </Main>
