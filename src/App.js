@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
-import { cerulean, lightCerulean, text,
-         lightText, darkText, redHeader,
-         print, lightOrange } from './utils/colors';
+import { cerulean, lightCerulean, text, lightText,
+         darkText, redHeader, print, logoOrange,
+         darkerText, lighterText } from './utils/colors';
 import IntroText from './components/IntroText';
 import LiveEdit from './components/LiveEdit';
 import BlueResumeLayout from './components/BlueResumeLayout';
@@ -20,7 +20,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { previewRef: null, printMode: false, layout: 'blue' };
+    this.state = { previewRef: null, printMode: false, layout: 'orange' };
     this.getButtons = this.getButtons.bind(this);
     this.getPreviewRef = this.getPreviewRef.bind(this);
     this.getResumeLayout = this.getResumeLayout.bind(this);
@@ -33,7 +33,7 @@ class App extends Component {
     const buttonTypes = {
       blue: { color: cerulean },
       red: { color: redHeader },
-      orange: { color: lightOrange }
+      orange: { color: logoOrange }
     };
 
     const ButtonContainer = styled.div`
@@ -98,9 +98,9 @@ class App extends Component {
 
   render() {
     const content = JSON.stringify(ResumeContent);
-    const colors = { cerulean, lightCerulean, text,
-                     darkText, lightText, redHeader,
-                     lightOrange };
+    const colors = { cerulean, lightCerulean, text, darkText,
+                     lightText, redHeader, logoOrange, darkerText,
+                     lighterText };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
 
