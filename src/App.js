@@ -20,7 +20,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { previewRef: null, printMode: false, layout: 'orange' };
+    this.state = { previewRef: null, printMode: false, layout: 'blue' };
     this.getButtons = this.getButtons.bind(this);
     this.getPreviewRef = this.getPreviewRef.bind(this);
     this.getResumeLayout = this.getResumeLayout.bind(this);

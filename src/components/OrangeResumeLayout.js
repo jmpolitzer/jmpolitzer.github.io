@@ -86,7 +86,6 @@ const OrangeResumeLayout = (`
           <Contact color={colors.darkerText} big='true'>{data.name}</Contact>
         </HeaderSection>
         <HeaderSection>
-          <Contact>{data.phone}</Contact>
           <Contact>{data.email}</Contact>
           <Contact>{data.city}, {data.state}</Contact>
           <Contact>{data.github}</Contact>

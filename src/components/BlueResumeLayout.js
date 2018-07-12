@@ -81,13 +81,11 @@ const BlueResumeLayout = (`
       <Body>
         <SideBar>
           <SideBarGroup>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>{data.phone}</BoldText>
             <BoldText title='true' printMode={printMode ? 1 : 0}>{data.email}</BoldText>
             <BoldText title='true' printMode={printMode ? 1 : 0}>{data.github}</BoldText>
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText>{data.address1}</BoldText>
-            <BoldText>{data.city}, {data.state} {data.zip}</BoldText>
+            <BoldText>{data.city}, {data.state}</BoldText>
           </SideBarGroup>
           <SideBarGroup>
             <BoldText title='true' printMode={printMode ? 1 : 0}>Skills</BoldText>

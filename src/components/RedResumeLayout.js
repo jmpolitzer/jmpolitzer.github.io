@@ -11,6 +11,8 @@ const RedResumeLayout = (`
   \`;
 
   const HeaderSection = styled.div\`
+    display: \${(props) => props.contacts && 'flex'};
+    justify-content: \${(props) => props.contacts && 'space-around'};
     flex-direction: column;
     width: \${(props) => props.name ? '65%' : '35%'};
   \`;
@@ -20,10 +22,6 @@ const RedResumeLayout = (`
     font-size: 64px;
     font-weight: bold;
     color: \${colors.redHeader};
-  \`;
-
-  const Contact = styled.div\`
-    margin-bottom: 20px;
   \`;
 
   const Body = styled.div\`
@@ -72,18 +70,16 @@ const RedResumeLayout = (`
         <HeaderSection name='true'>
           <Name>{data.name}</Name>
         </HeaderSection>
-        <HeaderSection>
-          <Contact>
-            <Text>{data.address1}</Text>
-            <Text>{data.city}, {data.state} {data.zip}</Text>
-          </Contact>
-          <Contact>
-            <Text>M&emsp;&emsp;&emsp;{data.phone}</Text>
-            <Text>E&emsp;&emsp;&emsp;{data.email}</Text>
-          </Contact>
-          <Contact>
+        <HeaderSection contacts='true'>
+          <div>
+            <Text>{data.city}, {data.state}</Text>
+          </div>
+          <div>
+            <Text>{data.email}</Text>
+          </div>
+          <div>
             <Text>{data.github}</Text>
-          </Contact>
+          </div>
         </HeaderSection>
       </Header>
       <Body>
