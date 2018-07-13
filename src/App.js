@@ -9,6 +9,7 @@ import { cerulean, lightCerulean, text, lightText,
          darkerText, lighterText } from './utils/colors';
 import IntroText from './components/IntroText';
 import LiveEdit from './components/LiveEdit';
+import Footer from './components/Footer';
 import BlueResumeLayout from './components/BlueResumeLayout';
 import RedResumeLayout from './components/RedResumeLayout';
 import OrangeResumeLayout from './components/OrangeResumeLayout';
@@ -129,6 +130,7 @@ class App extends Component {
               scope={scope}
               noInline={true}
               passPreviewRefUpward={this.getPreviewRef} />
+            <Footer />
           </div>}
         </CSSTransitionGroup>
       </div>
