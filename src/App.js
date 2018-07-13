@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
+import { CSSTransitionGroup } from 'react-transition-group';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
 import { cerulean, lightCerulean, text, lightText,
@@ -20,8 +21,12 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { previewRef: null, printMode: false, layout: 'blue' };
+    this.state = { resumeVisible: false,
+                   previewRef: null,
+                   printMode: false,
+                   layout: 'blue' };
     this.getButtons = this.getButtons.bind(this);
+    this.showResume = this.showResume.bind(this);
     this.getPreviewRef = this.getPreviewRef.bind(this);
     this.getResumeLayout = this.getResumeLayout.bind(this);
     this.setResumeLayout = this.setResumeLayout.bind(this);
@@ -66,6 +71,10 @@ class App extends Component {
     </ButtonContainer>
   }
 
+  showResume() {
+    this.setState({ resumeVisible: true });
+  }
+
   getPreviewRef(previewRef) {
     this.setState({ previewRef });
   }
@@ -107,15 +116,21 @@ class App extends Component {
 
     return (
       <div>
-        <header className="App">
-          <img src={headshot} className="App-headshot" alt="headshot" />
-          <IntroText />
+        <header className='Header'>
+          <img src={headshot} className='App-headshot' alt='headshot' />
+          <IntroText showResume={this.showResume} />
         </header>
-        {this.getButtons()}
-        <LiveEdit code={this.getResumeLayout()}
-                  scope={scope}
-                  noInline={true}
-                  passPreviewRefUpward={this.getPreviewRef} />
+        <CSSTransitionGroup transitionName='resume'
+                            transitionEnterTimeout={700}
+                            transitionLeaveTimeout={300}>
+          {this.state.resumeVisible && <div>
+            {this.getButtons()}
+            <LiveEdit code={this.getResumeLayout()}
+              scope={scope}
+              noInline={true}
+              passPreviewRefUpward={this.getPreviewRef} />
+          </div>}
+        </CSSTransitionGroup>
       </div>
     );
   }
