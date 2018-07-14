@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactToPrint from 'react-to-print';
 import { CSSTransitionGroup } from 'react-transition-group';
+import ReactTooltip from 'react-tooltip';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
 import { cerulean, lightCerulean, text, lightText,
@@ -61,15 +62,19 @@ class App extends Component {
 
     return <ButtonContainer>
       {Object.keys(buttonTypes).map((b, i) => {
-        return <Button key={i}
-                       type={buttonTypes[b]}
-                       onClick={() => this.setResumeLayout(b)}>
-                 <IoIosPaperOutline />
-               </Button>})}
-      <ReactToPrint trigger={() => this.print(Button)}
-                    content={() => this.state.previewRef}
-                    pageStyle={''} />
-    </ButtonContainer>
+        return <div key={i}>
+                  <Button type={buttonTypes[b]}
+                          data-tip
+                          data-for={b}
+                          onClick={() => this.setResumeLayout(b)}>
+                    <IoIosPaperOutline />
+                  </Button>
+                  <ReactTooltip id={b}>{b} layout</ReactTooltip>
+                </div>})}
+                <ReactToPrint trigger={() => this.print(Button)}
+                              content={() => this.state.previewRef}
+                              pageStyle={''} />
+          </ButtonContainer>
   }
 
   showResume() {
@@ -99,11 +104,16 @@ class App extends Component {
   }
 
   print(Button) {
-    return <Button type={{ color: print }}
-                   onMouseEnter={() => this.setPrintMode(true)}
-                   onMouseLeave={() => this.setPrintMode(false)}>
-             <IosPrinterOutline />
-           </Button>
+    return <div>
+              <Button type={{ color: print }}
+                      data-tip
+                      data-for='print'
+                      onMouseEnter={() => this.setPrintMode(true)}
+                      onMouseLeave={() => this.setPrintMode(false)}>
+                <IosPrinterOutline />
+              </Button>
+              <ReactTooltip id='print'>print</ReactTooltip>
+            </div>
   }
 
   render() {

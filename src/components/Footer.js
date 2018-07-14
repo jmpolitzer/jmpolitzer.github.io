@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 import IoIosEmailOutline from 'react-icons/lib/io/ios-email-outline';
 import IoSocialGithub from 'react-icons/lib/io/social-github';
 import { print } from '../utils/colors';
@@ -41,8 +42,10 @@ const Button = styled.div`
 const Footer = () => (
   <Container>
     <Contacts>
-      <Button><a href={'mailto:me@jaypolitzer.com'}><IoIosEmailOutline /></a></Button>
-      <Button github='true'><a target="_blank" rel="noopener noreferrer" href={'https://github.com/jmpolitzer/resume'}><IoSocialGithub /></a></Button>
+      <Button data-tip data-for='mailto'><a href={'mailto:me@jaypolitzer.com'}><IoIosEmailOutline /></a></Button>
+      <ReactTooltip id='mailto'>email me</ReactTooltip>
+      <Button data-tip data-for='github' github='true'><a target="_blank" rel="noopener noreferrer" href={'https://github.com/jmpolitzer/resume'}><IoSocialGithub /></a></Button>
+      <ReactTooltip id='github'>see the source code</ReactTooltip>
     </Contacts>
   </Container>
 );
