@@ -23,7 +23,7 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { resumeVisible: true,
+    this.state = { resumeVisible: false,
                    previewRef: null,
                    printMode: false,
                    layout: 'blue' };

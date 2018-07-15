@@ -1,10 +1,8 @@
 const BlueResumeLayout = (`
   const LayoutWrapper = styled.div\`
-    @media screen, print {
-      display: block;
-      padding: 25px;
-      color: \${(props) => props.printMode ? colors.lightText : colors.text};
-    }
+    display: block;
+    padding: 25px;
+    color: \${(props) => props.printMode ? colors.lightText : colors.text};
   \`;
 
   const HorizontalRule = styled.hr\`
