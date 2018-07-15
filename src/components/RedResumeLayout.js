@@ -22,6 +22,10 @@ const RedResumeLayout = (`
     font-size: 64px;
     font-weight: bold;
     color: \${colors.redHeader};
+
+    @media (max-width: 950px) {
+      font-size: 48px;
+    }
   \`;
 
   const Body = styled.div\`

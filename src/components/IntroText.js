@@ -5,11 +5,19 @@ import styled from 'styled-components';
 const BigText = styled.div`
   display: inline-block;
   font-size: 24px;
+
+  @media (max-width: 500px) {
+    font-size: 22px;
+  }
 `;
 
 const SmallText = styled.div`
   display: inline-block;
   font-size: 13px;
+
+  @media (max-width: 500px) {
+    padding: 10px 50px 0px;
+  }
 `
 
 const IntroText = ({ showResume }) => (

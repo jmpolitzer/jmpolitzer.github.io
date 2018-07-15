@@ -16,7 +16,7 @@ const LiveWrapper = styled.div`
   flex-direction: row;
   justify-content: stretch;
   align-items: stretch;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;
@@ -25,7 +25,7 @@ const column = css`
   flex-basis: 50%;
   width: 50%;
   max-width: 50%;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-basis: auto;
     width: 100%;
     max-width: 100%;
