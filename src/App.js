@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-// import ReactToPrint from 'react-to-print';
+import ReactToPrint from 'react-to-print';
 import { CSSTransitionGroup } from 'react-transition-group';
 import ReactTooltip from 'react-tooltip';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
@@ -72,9 +72,9 @@ class App extends Component {
                   </Button>
                   <ReactTooltip disable={isMobile} id={b}>{b} layout</ReactTooltip>
                 </div>})}
-                {/* <ReactToPrint trigger={() => this.print(Button)}
+                <ReactToPrint trigger={() => this.print(Button)}
                               content={() => this.state.previewRef}
-                              pageStyle={''} /> */}
+                              pageStyle={''} />
           </ButtonContainer>
   }
 
