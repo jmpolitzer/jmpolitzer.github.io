@@ -36,7 +36,7 @@ class App extends Component {
     this.print = this.print.bind(this);
   }
 
-  getButtons() {
+  getButtons(isMobile) {
     const buttonTypes = {
       blue: { color: cerulean },
       red: { color: redHeader },
@@ -54,6 +54,7 @@ class App extends Component {
       color: white;
       padding: 10px;
       font-size: 22px;
+      margin: 0px;
 
       &:hover {
         cursor: pointer;
@@ -69,7 +70,7 @@ class App extends Component {
                           onClick={() => this.setResumeLayout(b)}>
                     <IoIosPaperOutline />
                   </Button>
-                  <ReactTooltip id={b}>{b} layout</ReactTooltip>
+                  <ReactTooltip disable={isMobile} id={b}>{b} layout</ReactTooltip>
                 </div>})}
                 {/* <ReactToPrint trigger={() => this.print(Button)}
                               content={() => this.state.previewRef}
@@ -123,7 +124,7 @@ class App extends Component {
                      lighterText };
     const printMode = this.state.printMode;
     const scope = { styled, colors, content, printMode };
-
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     return (
       <div>
@@ -135,12 +136,12 @@ class App extends Component {
                             transitionEnterTimeout={700}
                             transitionLeaveTimeout={300}>
           {this.state.resumeVisible && <div>
-            {this.getButtons()}
+            {this.getButtons(isMobile)}
             <LiveEdit code={this.getResumeLayout()}
               scope={scope}
               noInline={true}
               passPreviewRefUpward={this.getPreviewRef} />
-            <Footer />
+            <Footer isMobile={isMobile} />
           </div>}
         </CSSTransitionGroup>
       </div>

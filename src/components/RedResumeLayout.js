@@ -24,7 +24,7 @@ const RedResumeLayout = (`
     color: \${colors.redHeader};
 
     @media (max-width: 950px) {
-      font-size: 48px;
+      font-size: 40px;
     }
   \`;
 

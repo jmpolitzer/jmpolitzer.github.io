@@ -39,13 +39,13 @@ const Button = styled.div`
   }
 `;
 
-const Footer = () => (
+const Footer = ({ isMobile }) => (
   <Container>
     <Contacts>
       <Button data-tip data-for='mailto'><a href={'mailto:me@jaypolitzer.com'}><IoIosEmailOutline /></a></Button>
-      <ReactTooltip id='mailto'>email me</ReactTooltip>
+      <ReactTooltip disable={isMobile} id='mailto'>email me</ReactTooltip>
       <Button data-tip data-for='github' github='true'><a target="_blank" rel="noopener noreferrer" href={'https://github.com/jmpolitzer/resume'}><IoSocialGithub /></a></Button>
-      <ReactTooltip id='github'>see the source code</ReactTooltip>
+      <ReactTooltip disable={isMobile} id='github'>see the source code</ReactTooltip>
     </Contacts>
   </Container>
 );

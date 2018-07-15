@@ -5,7 +5,6 @@ import { foreground, red, lightGrey } from '../utils/colors';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 const StyledProvider = styled(LiveProvider)`
-  border-radius: ${polished.rem(3)};
   box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.27);
   overflow: hidden;
   margin-bottom: ${polished.rem(100)};
