@@ -14,17 +14,17 @@ const SmallText = styled.div`
 
 const IntroText = ({ showResume }) => (
   <Typist startDelay={1500} averageTypingDelay={10} onTypingDone={showResume}>
-    <BigText>Hi, I'm Jay.&nbsp;</BigText>
-    <Typist.Delay ms={1500} />
-    <br key={1} />
-    <BigText>I'm so glad you stopped by.</BigText>
-    <Typist.Delay ms={1500} />
-    <br key={2} />
+    <BigText key={1}>Hi, I'm Jay.&nbsp;</BigText>
+    <Typist.Delay key={2} ms={1500} />
     <br key={3} />
-    <SmallText>In a few moments, my r&eacute;sum&eacute; and the React code that renders it will appear.</SmallText>
-    <Typist.Delay ms={1000} />
-    <br key={4} />
-    <SmallText>Take a gander at all three flavors and print to your heart's desire.</SmallText>
+    <BigText key={4}>I'm so glad you stopped by.</BigText>
+    <Typist.Delay key={5} ms={1500} />
+    <br key={6} />
+    <br key={7} />
+    <SmallText key={8}>In a few moments, my r&eacute;sum&eacute; and the React code that renders it will appear.</SmallText>
+    <Typist.Delay key={9} ms={1000} />
+    <br key={10} />
+    <SmallText key={11}>Take a gander at all three flavors and print to your heart's desire.</SmallText>
   </Typist>
 );
 
