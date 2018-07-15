@@ -1,0 +1,100 @@
+{
+  "name": "Jay Politzer",
+  "email": "me@jaypolitzer.com",
+  "github": "https://github.com/ jmpolitzer",
+  "city": "Nashville",
+  "state": "TN",
+  "skills": ["React", "React Native", "Redux", "Angular", "Vue", "Node", "ES6", "Ruby", "AWS", "Google Cloud", "Firebase", "Sketch", "Jira"],
+  "other": ["Member, Phoenix Club",
+            "Member, Nashville Technology Council",
+            "Top 3 Finalist, NTC Awards Emerging Company of the Year",
+            "Co-Founder, Nashville Blockchain Developers Network",
+            "Volunteer, Nashville Resuce Mission"],
+  "references": [],
+  "profile": "I am a technologist with a passion for building companies and bringing products to life. As Co-Founder, Chief Technology Officer, and Chief Administrative Officer of Satchel Health, I have first-hand and in-depth experience in nearly every stage of the startup lifecycle, from designing, iterating, and developing multiple product lines to establishing, executing, and maintaining operational necessities and objectives.",
+  "experience": [
+    {
+      "title": "Partner",
+      "company": "Ornament Interactive",
+      "location": "Nashville, TN",
+      "duration": "2017-Present",
+      "highlights": [
+        "Develop iOS apps in React Native and Redux that harness offline async storage, push notifications, mobile navigation, camera interaction, and image manipulation",
+        "Deliver React-based web app MVPs served by Express and Hapi frameworks and consuming data from MongoDB, MySQL, and Postgres databases",
+        "Launch server-less backend services utilizing cloud-based functions and APIs, realtime databases, and authentication",
+        "Wrote data parser to ingest disparate data sources from Excel spreadsheets, normalize data fields and values, and convert into manageable JSON structures",
+        "Architected cloud-based media upload and playback framework for streaming music services, including audio/video encoding, CDN configuration, and bucket storage strategies",
+        "Designed dynamic web-based contract generation and signing workflow",
+        "Built marketing automation microservice that enables campaign creation and tracking, transactional and bulk email distribution, and contact management",
+        "Help clients transform business ideas into actionable product development strategies by conducting product research and market validation, roadmapping feature sets for multiple platforms and verticals, and providing industry-leading recommendations for platform infrastructure and deployment",
+        "Advise clients on establishing software development lifecycles and drafting job descriptions to recruit software engineering first hires"
+      ]
+    },
+    {
+      "title": "Co-Founder & CAO",
+      "company": "Satchel Health",
+      "location": "Nashville, TN",
+      "duration": "2017-2018",
+      "highlights": []
+    },
+    {
+      "title": "Co-Founder & CTO",
+      "company": "Satchel Health",
+      "location": "Nashville, TN",
+      "duration": "2014-2017",
+      "highlights": [
+        "Led technical processes, peer code reviews, and testing/deployment schedules",
+        "Managed a team of 6 software engineers and designers using Kanban methodology",
+        "Spearheaded the migration of application from Angular 1 to React and Redux",
+        "Utilized WebRTC API to enable realtime multi-peer audio/video communication user interface in React and deployed custom signaling server and STUN/TURN/ SFU infrastructure to AWS",
+        "Programmed front-end decision tree logic and swipeable components in React for helping clinicians determine medical conditions and chief complaints",
+        "Created dynamic medical documentation module in React to allow for templating, e-signing, and amending SOAP notes",
+        "Developed realtime streaming microservice for medical diagnostic devices, including stethoscope, pulse oximeter, and dermatascope",
+        "Wrote video streaming application for wearable eyewear devices such as Google Glass and Vuzix M100",
+        "Architected and wrote dispatching system for connecting credentialed and licensed medical specialists with nurses and patients on-demand",
+        "Deployed web application in kiosk mode onto Android tablets and Microsoft PCs using a tailored Chromium Embedded Framework",
+        "Designed and implemented event-sourcing microservice architecture to provide immutable data structure and allow for easy auditing of application state",
+        "Created webhooks for 3rd party event-driven interaction with company API",
+        "Collaborated with designers to design and validate UX and UI designs",
+        "Drafted HIPAA policies, ensured end-to-end data encryption in transit and at rest, and engaged with 3rd parties to undertake routine security audits, penetration testing, and risk assessments",
+        "Distilled strategic vision into actionable technical requirements and worked with VP of Engineering to develop product roadmap and accompanying resource needs",
+        "Worked with leadership team to meet potential clients, close deals, and provide technical feedback/assistance during customer implementations"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Ferf & Co.",
+      "location": "Nashville, TN",
+      "duration": "2014",
+      "highlights": [
+        "Full-stack Ruby on Rails and Javascript engineer",
+        "Maintained legacy Rails application that experienced over 1,000,000 unique visitors each month",
+        "Technical lead for converting Rails application to mobile-first layouts on a rolling basis",
+        "Launched marketing microsites that included gamification and enhanced user engagement tracking tools",
+        "Developed cascading grid layout for dynamic fitting and resizing of DOM elements"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Nashville Software School",
+      "degree": "",
+      "year": "2014"
+    },
+    {
+      "school": "University of Denver",
+      "degree": "MA International Security",
+      "year": "2009"
+    },
+    {
+      "school": "University of Denver",
+      "degree": "MA Conflict Resolution",
+      "year": "2009"
+    },
+    {
+      "school": "University of Georgia",
+      "degree": "BA Political Science",
+      "year": "2006"
+    }
+  ]
+}
