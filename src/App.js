@@ -5,6 +5,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import ReactTooltip from 'react-tooltip';
 import IosPrinterOutline from 'react-icons/lib/io/ios-printer-outline';
 import IoIosPaperOutline from 'react-icons/lib/io/ios-paper-outline';
+import Analytics from './utils/analytics';
 import { cerulean, lightCerulean, text, lightText,
          darkText, redHeader, print, logoOrange,
          darkerText, lighterText } from './utils/colors';
@@ -34,6 +35,10 @@ class App extends Component {
     this.setResumeLayout = this.setResumeLayout.bind(this);
     this.setPrintMode = this.setPrintMode.bind(this);
     this.print = this.print.bind(this);
+  }
+
+  componentDidMount() {
+    Analytics.pageview(window.location.pathname);
   }
 
   getButtons(isMobile) {
