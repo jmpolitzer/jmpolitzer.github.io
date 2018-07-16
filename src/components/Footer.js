@@ -44,7 +44,7 @@ const Footer = ({ isMobile }) => (
     <Contacts>
       <Button data-tip data-for='mailto'><a href={'mailto:me@jaypolitzer.com'}><IoIosEmailOutline /></a></Button>
       <ReactTooltip disable={isMobile} id='mailto'>email me</ReactTooltip>
-      <Button data-tip data-for='github' github='true'><a target="_blank" rel="noopener noreferrer" href={'https://github.com/jmpolitzer/resume'}><IoSocialGithub /></a></Button>
+      <Button data-tip data-for='github' github='true'><a target="_blank" rel="noopener noreferrer" href={'https://github.com/jmpolitzer/jmpolitzer.github.io/tree/source'}><IoSocialGithub /></a></Button>
       <ReactTooltip disable={isMobile} id='github'>see the source code</ReactTooltip>
     </Contacts>
   </Container>
