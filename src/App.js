@@ -77,7 +77,7 @@ class App extends Component {
                   </Button>
                   <ReactTooltip disable={isMobile} id={b}>{b} layout</ReactTooltip>
                 </div>})}
-                <ReactToPrint trigger={() => this.print(Button)}
+                <ReactToPrint trigger={() => this.print(Button, isMobile)}
                               content={() => this.state.previewRef}
                               pageStyle={''} />
           </ButtonContainer>
@@ -109,7 +109,7 @@ class App extends Component {
     this.setState({ printMode: mode });
   }
 
-  print(Button) {
+  print(Button, isMobile) {
     return <div>
               <Button type={{ color: print }}
                       data-tip
@@ -118,7 +118,7 @@ class App extends Component {
                       onMouseLeave={() => this.setPrintMode(false)}>
                 <IosPrinterOutline />
               </Button>
-              <ReactTooltip id='print'>print</ReactTooltip>
+              <ReactTooltip disable={isMobile} id='print'>print</ReactTooltip>
             </div>
   }
 
