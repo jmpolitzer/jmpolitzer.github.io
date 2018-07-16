@@ -77,9 +77,9 @@ class App extends Component {
                   </Button>
                   <ReactTooltip disable={isMobile} id={b}>{b} layout</ReactTooltip>
                 </div>})}
-                <ReactToPrint trigger={() => this.print(Button, isMobile)}
+                {!isMobile && <ReactToPrint trigger={() => this.print(Button, isMobile)}
                               content={() => this.state.previewRef}
-                              pageStyle={''} />
+                              pageStyle={''} />}
           </ButtonContainer>
   }
 
