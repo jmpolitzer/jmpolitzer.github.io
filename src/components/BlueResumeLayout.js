@@ -2,7 +2,7 @@ const BlueResumeLayout = (`
   const LayoutWrapper = styled.div\`
     display: block;
     padding: 25px;
-    color: \${(props) => props.printMode ? colors.lightText : colors.text};
+    color: \${colors.text};
   \`;
 
   const HorizontalRule = styled.hr\`
@@ -14,7 +14,7 @@ const BlueResumeLayout = (`
   const Header = styled.h4\`
     margin-left: 10px;
     font-weight: bold;
-    color: \${(props) => props.printMode ? colors.lightCerulean : colors.cerulean};
+    color: \${colors.cerulean};
   \`;
 
   const Body = styled.div\`
@@ -62,7 +62,7 @@ const BlueResumeLayout = (`
     overflow-wrap: break-word;
     margin-bottom: \${props => props.other ? '10px' : '5px'};
     margin-right: \${props => props.skill && '2px'};
-    color: \${props => props.title && (props.printMode ? colors.lightCerulean : colors.cerulean)};
+    color: \${props => props.title && colors.cerulean};
   \`;
 
   const LongText = styled.div\`
@@ -75,20 +75,20 @@ const BlueResumeLayout = (`
   const data = JSON.parse(content);
 
   render(
-    <LayoutWrapper printMode={printMode ? 1 : 0}>
+    <LayoutWrapper>
       <HorizontalRule />
-      <Header printMode={printMode ? 1 : 0}>{data.name.toUpperCase()}</Header>
+      <Header>{data.name.toUpperCase()}</Header>
       <Body>
         <SideBar>
           <SideBarGroup>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>{data.email}</BoldText>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>{data.github}</BoldText>
+            <BoldText title='true'>{data.email}</BoldText>
+            <BoldText title='true'>{data.github}</BoldText>
           </SideBarGroup>
           <SideBarGroup>
             <BoldText>{data.city}, {data.state}</BoldText>
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>Skills</BoldText>
+            <BoldText title='true'>Skills</BoldText>
             <SkillsGroup>
               {data.skills.map((skill, i) => {
                 const last = i <= data.skills.length - 2 ? ',' : '';
@@ -98,23 +98,23 @@ const BlueResumeLayout = (`
             </SkillsGroup>
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>Other</BoldText>
+            <BoldText title='true'>Other</BoldText>
             {data.other.map((oth, j) => {
               return <BoldText other='true' key={j}>{oth}</BoldText>
             })}
           </SideBarGroup>
           <SideBarGroup>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>References</BoldText>
+            <BoldText title='true'>References</BoldText>
             {data.references.length === 0 && <BoldText>Available upon request.</BoldText>}
           </SideBarGroup>
         </SideBar>
         <Main>
           <MainSection>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>Profile</BoldText>
+            <BoldText title='true'>Profile</BoldText>
             <LongText>{data.profile}</LongText>
           </MainSection>
           <MainSection>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>Experience</BoldText>
+            <BoldText title='true'>Experience</BoldText>
             {data.experience.map((exp, k) => {
               return <div key={k}>
                       <BoldText>{exp.title}, {exp.company}; {exp.location} &ndash; {exp.duration}</BoldText>
@@ -127,7 +127,7 @@ const BlueResumeLayout = (`
                   })}
           </MainSection>
           <MainSection>
-            <BoldText title='true' printMode={printMode ? 1 : 0}>Education</BoldText>
+            <BoldText title='true'>Education</BoldText>
             {data.education.map((edu, m) => {
               const degree = edu.degree ? edu.degree + ',' : '';
 
